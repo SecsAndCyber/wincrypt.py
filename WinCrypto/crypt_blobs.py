@@ -6,7 +6,7 @@ from struct import unpack, pack
 import binascii
 
 def str_to_PBYTE( _str ):
-    _bytes = _str.encode('ascii')
+    _bytes = _str.encode('hex').decode('hex')
     return (BYTE * len(_bytes))(* unpack("=" + "B"*len(_bytes), _bytes))
     
     
